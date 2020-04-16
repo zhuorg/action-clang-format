@@ -17,8 +17,8 @@ RUN update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/cl
 RUN ls ~
 RUN find / -name run-clang-format.py
 
-COPY run-clang-format.py /run-clang-format.py
-RUN chmod +x /run-clang-format.py
+COPY run-clang-format.py /github/workspace/run-clang-format.py
+RUN chmod +x /github/workspace/run-clang-format.py
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
